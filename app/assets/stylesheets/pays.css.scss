@@ -1,3 +1,29 @@
 // Place all the styles related to the pays controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home{
+  width: 80%;
+  margin: 5% auto 10% auto;
+  text-align: center;
+  font-size: 90%;
+  color: #999;
+}
+
+button{
+  padding: 20px;
+  margin-top: 70px; 
+  background-color: rgba(131,102,255,0.5);
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  border-style: none;
+}
+button a{
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px #333;
+}
+button:hover{
+  background-color: rgba(131,102,255,0.8);
+  color: #ddd
+}

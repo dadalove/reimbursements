@@ -1,16 +1,13 @@
-<h1>reimbursements</h1>
-
-
-<%= link_to "new", new_pay_path %>
-
-
 <ul>
-<% @pays.each do |pay| %>
-<li>
-        <%= pay.date %>
-        <%= pay.payer %>
-        <%= pay.money %>
-        <%= pay.description %>
-</li>
-<%end%> 
-</ul>
+  <% @pays.each do |pay| %>
+  <li>
+          Date:<%= pay.date %>
+          Payer:<%= pay.payer %>
+          Money:<%= pay.money %>
+          Description:<%= pay.description %>
+          <%= link_to "delete",pay_path(pay),:method => :delete %>
+  </li>
+  <%end%> 
+  </ul>
+
+  <%= link_to "Home", root_path %>

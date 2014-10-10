@@ -11,8 +11,15 @@ class PaysController < ApplicationController
     @pay=Pay.new(pay_params)
     if @pay.save
       redirect_to pays_path
-    else render :new
+    else 
+      render :new
     end
+  end
+
+  def destroy
+    @pay=Pay.find(params[:id])
+    @pay.destroy
+    redirect_to pays_path
   end
 
 
@@ -26,5 +33,5 @@ class PaysController < ApplicationController
   def pay_params
     params.require(:pay).permit(:date,:payer,:money,:description)
   end
-  
+
 end
