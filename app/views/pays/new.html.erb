@@ -1,0 +1,26 @@
+<%= form_for @pay do |f| %>
+
+<%= f.label :date,'Date' %>
+<%= f.date_field :date %>
+
+<%= f.label :payer,'Payer' %>
+<%= f.select(:payer, 
+  options_for_select( [ ['Ariel','Ariel'],['Tim','Tim'],['Benson','Benson'],['Carrie','Carrie'] ] )
+  )%>
+
+<%= f.label :money,'Money' %>
+<%= f.text_field :money %>
+
+<%= f.label :description ,'Description' %>
+<%= f.text_area :description %>
+
+
+
+
+
+
+
+
+<%= f.submit%>
+
+<% end %>
