@@ -8,6 +8,21 @@
   font-size: 90%;
   color: #999;
 }
+.view{
+  padding-right: 5px;
+  display: block;
+  margin-top: 40px;  
+  font-size: 15px;
+  color: #aaa;
+}
+.view a{
+  padding-left: 8px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.view a:hover{
+  text-decoration: underline;
+}
 
 button{
   padding: 20px;
@@ -18,12 +33,66 @@ button{
   font-size: 20px;
   border-style: none;
 }
-button a{
+button a:link,
+button a:visited{
   color: #fff;
   text-decoration: none;
   text-shadow: 1px 1px 2px #333;
+  display: block;
 }
 button:hover{
   background-color: rgba(131,102,255,0.8);
   color: #ddd
 }
+
+table{
+  margin: 5% auto 10% auto;
+  font-size: 90%;
+  color: #000;
+}
+.right{
+  text-align: right;
+}
+.left{
+  padding: 30px;
+}
+
+
+#pay_payer{
+  position: relative;
+  left: -320%;
+}
+
+#pay_description{
+  width: 157px;
+  height: 71px;
+}
+
+.remarks{
+  padding-bottom: 65px;
+}
+// .send{
+//   margin: 5% auto 10% auto;
+// }
+.send input{
+  border-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20% 100% 10% 135%;
+  color: #fff;
+  font-size: 14px;
+  background-color: rgba(167,175,255,0.9);
+}
+.send input:hover{
+  background-color: rgb(167,175,255);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+

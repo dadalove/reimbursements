@@ -1,26 +1,30 @@
 <%= form_for @pay do |f| %>
 
-<%= f.label :date,'Date' %>
-<%= f.date_field :date %>
+<table>
+  <tr>
+    <td class="right"><%= f.label :date,'Date' %></td>
+    <td class="left"><%= f.date_field :date %></td>
+  </tr>
 
-<%= f.label :payer,'Payer' %>
-<%= f.select(:payer, 
-  options_for_select( [ ['Ariel','Ariel'],['Tim','Tim'],['Benson','Benson'],['Carrie','Carrie'] ] )
-  )%>
+  <tr>
+    <td class="right"><%= f.label :payer,'Payer' %><td>
+    <td class="left"><%= f.select(:payer, 
+      options_for_select( [ ['Ariel','Ariel'],['Tim','Tim'],['Benson','Benson'],['Carrie','Carrie'] ] )
+      )%></td>
+  </tr>
 
-<%= f.label :money,'Money' %>
-<%= f.text_field :money %>
+  <tr>
+    <td class="right"><%= f.label :money,'Money' %></td>
+    <td class="left"><%= f.text_field :money %></td>
+  </tr>
 
-<%= f.label :description ,'Description' %>
-<%= f.text_area :description %>
-
-
-
-
-
-
-
-
-<%= f.submit%>
-
+  <tr>
+    <td class="right remarks"><%= f.label :description ,'Description' %></td>
+    <td class="left"><%= f.text_area :description %></td>
+  </tr>
+  
+  <tr>
+    <td class="send"><%= f.submit%></td>
+  </tr>
+</table>
 <% end %>
