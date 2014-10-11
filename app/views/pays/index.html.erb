@@ -1,13 +1,23 @@
-<ul>
-  <% @pays.each do |pay| %>
-  <li>
-          Date:<%= pay.date %>
-          Payer:<%= pay.payer %>
-          Money:<%= pay.money %>
-          Description:<%= pay.description %>
-          <%= link_to "delete",pay_path(pay),:method => :delete %>
-  </li>
-  <%end%> 
-  </ul>
+<div class="list_wrap">
+  <table class="list">
+    <caption>Reimbursements List</caption>
+    <% @pays.each do |pay| %>
+      <tr>
+        <th>Date</th>
+        <th>Payer</th>
+        <th>Money</th>
+        <th>Description</th>  
+      </tr>
 
-  <%= link_to "Home", root_path %>
+      <tr>
+        <td><%= pay.date %></td>
+        <td><%= pay.payer %></td>
+        <td><%= pay.money %></td>
+        <td><%= pay.description %></td>
+        <td class="del"><a href="##"><%= link_to "Delete",pay_path(pay),:method => :delete %></a></td>
+      </tr>
+    <%end%> 
+  </table>
+</div>
+  
+<button class="back"><%= link_to "Back to Home", root_path %></button>
