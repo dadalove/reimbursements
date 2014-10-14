@@ -1,7 +1,6 @@
 <div class="list_wrap">
   <table class="list">
     <caption>Reimbursements List</caption>
-    <% @pays.each do |pay| %>
       <tr>
         <th>Date</th>
         <th>Payer</th>
@@ -9,15 +8,19 @@
         <th>Description</th>  
       </tr>
 
+    <% @pays.each do |pay| %>
       <tr>
         <td><%= pay.date %></td>
         <td><%= pay.payer %></td>
         <td><%= pay.money %></td>
         <td><%= pay.description %></td>
+        <td><%= link_to "paid", pays_path %></td>
+
         <td class="del"><a href="##"><%= link_to "Delete",pay_path(pay),:method => :delete %></a></td>
       </tr>
-    <%end%> 
+    <%end%>
+    <%= paginate @pays %> 
   </table>
 </div>
   
-<button class="back"><%= link_to "Back to Home", root_path %></button>
+<button class="back"><a href="##"><%= link_to "Back to Home", root_path %></a></button>

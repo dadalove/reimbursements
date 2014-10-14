@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141010053816) do
     t.string   "payer"
     t.integer  "money"
     t.string   "description"
+    t.integer  "paid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

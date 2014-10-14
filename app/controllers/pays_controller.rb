@@ -1,6 +1,7 @@
 class PaysController < ApplicationController
   def index
     @pays=Pay.all
+    @pays = Pay.page(params[:page]).per(5)
   end
 
   def new
@@ -14,6 +15,10 @@ class PaysController < ApplicationController
     else 
       render :new
     end
+  end
+
+  def show
+    @paid=Paid.find(params[:id])
   end
 
   def destroy
