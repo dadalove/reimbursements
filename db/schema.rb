@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141010053816) do
     t.integer  "money"
     t.string   "description"
     t.integer  "paid"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

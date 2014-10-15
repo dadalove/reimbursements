@@ -1,6 +1,8 @@
 Reimbursementsweb::Application.routes.draw do
 
   resources :pays
+  # resources :rest
+
   
 
   root'welcome#index'

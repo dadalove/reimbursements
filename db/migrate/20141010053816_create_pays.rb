@@ -6,7 +6,7 @@ class CreatePays < ActiveRecord::Migration
       t.integer :money
       t.string :description
       t.integer :paid
-
+      t.string  :status
       t.timestamps
     end
   end

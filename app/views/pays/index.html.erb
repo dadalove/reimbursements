@@ -14,12 +14,17 @@
         <td><%= pay.payer %></td>
         <td><%= pay.money %></td>
         <td><%= pay.description %></td>
-        <td><%= link_to "paid", pays_path %></td>
+        <!-- <td><%= pay.status %></td> -->
+        
 
-        <td class="del"><a href="##"><%= link_to "Delete",pay_path(pay),:method => :delete %></a></td>
+        <% if pay.status=='false' %>     
+          <td><%= link_to "Update",pay_path(pay),:method => :PATCH %></td>
+          <td class="del"><a href="##"><%= link_to "Delete",pay_path(pay),:method => :delete %></a></td>
+        <% end %>
+        
       </tr>
     <%end%>
-    <%= paginate @pays %> 
+    <span class="page"><%= paginate @pays %></span>         <!-- 頁數按鈕 --> 
   </table>
 </div>
   

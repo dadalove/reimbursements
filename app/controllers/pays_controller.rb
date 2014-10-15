@@ -10,6 +10,7 @@ class PaysController < ApplicationController
 
   def create
     @pay=Pay.new(pay_params)
+    @pay.status = "false"
     if @pay.save
       redirect_to pays_path
     else 
@@ -17,13 +18,20 @@ class PaysController < ApplicationController
     end
   end
 
-  def show
-    @paid=Paid.find(params[:id])
-  end
+  # def show
+  #   @paid=Paid.find(params[:id])
+  # end
 
   def destroy
     @pay=Pay.find(params[:id])
     @pay.destroy
+    redirect_to pays_path
+  end
+
+   def update
+    @pay=Pay.find(params[:id])
+    @pay.status = "true"
+    @pay.save
     redirect_to pays_path
   end
 
