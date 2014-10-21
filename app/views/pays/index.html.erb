@@ -18,8 +18,11 @@
         
 
         <% if pay.status=='false' %>     
-          <td><%= link_to "Update",pay_path(pay),:method => :PATCH %></td>
+          <td><a href="##"><%= link_to "Paid",pay_path(pay),:method => :PATCH %></a></td>
           <td class="del"><a href="##"><%= link_to "Delete",pay_path(pay),:method => :delete %></a></td>
+        <% else %>
+         
+          <td><%= image_tag("confirm.png",class: "confirm") %></td>
         <% end %>
         
       </tr>

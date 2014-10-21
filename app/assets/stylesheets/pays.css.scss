@@ -14,7 +14,6 @@ button{
   margin-top: 70px; 
   background-color: rgba(131,102,255,0.5);
   border-radius: 5px;
-  // text-decoration: none;
   font-size: 20px;
   border-style: none;
 }
@@ -152,6 +151,11 @@ button.back{
 }
 button.back:hover{
   background-color: rgba(131,102,255,0.8)
+}
+
+.confirm{
+  width: 25px;
+  height: 25px;
 }
 
 

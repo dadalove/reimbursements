@@ -18,9 +18,12 @@ class PaysController < ApplicationController
     end
   end
 
-  # def show
-  #   @paid=Paid.find(params[:id])
-  # end
+  def update
+    @pay=Pay.find(params[:id])
+    @pay.status = "true"
+    @pay.save
+    redirect_to pays_path
+  end
 
   def destroy
     @pay=Pay.find(params[:id])
@@ -28,12 +31,7 @@ class PaysController < ApplicationController
     redirect_to pays_path
   end
 
-   def update
-    @pay=Pay.find(params[:id])
-    @pay.status = "true"
-    @pay.save
-    redirect_to pays_path
-  end
+   
 
 
 
