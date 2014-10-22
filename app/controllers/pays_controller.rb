@@ -1,10 +1,10 @@
 class PaysController < ApplicationController
 
-  before_action :authenticate
+  before_action :authenticate                                   #身份驗證功能
 
   def index
-    @pays = Pay.order("id DESC").page(params[:page]).per(5)
-  end
+    @pays = Pay.order("id DESC").page(params[:page]).per(5)     #最新的資料會在最前面 .order("id DESC")
+  end                                                           #頁數功能 .page(params[:page]).per(5)
 
   def new
     @pay = Pay.new
@@ -13,7 +13,7 @@ class PaysController < ApplicationController
   def create
     @pay = Pay.new(pay_params)
 
-    @pay.status = "not_paid"
+    @pay.status = "not_paid"                                   #預設是not_paid狀態
 
     if @pay.save
       redirect_to pays_path
@@ -25,22 +25,24 @@ class PaysController < ApplicationController
   def update
     @pay = Pay.find(params[:id])
 
-    @pay.status = "paid"
+    @pay.status = "paid"                                       #update後，是paid狀態
     @pay.save
 
-    redirect_to pays_path( :page => params[:page] )
+    redirect_to pays_path( :page => params[:page] )            #頁數的路徑，即使update也不會跑回第一頁
   end
 
   def destroy
     @pay = Pay.find(params[:id])
     @pay.destroy
 
-    redirect_to pays_path( :page => params[:page] )
+    redirect_to pays_path( :page => params[:page] )            #頁數的路徑，即使delete也不會跑回第一頁
   end
+
+
 
   protected
 
-  def authenticate
+  def authenticate                                                       #身份驗證功能
     authenticate_or_request_with_http_basic do |username, password|
     username == "dachin" && password == "123456789"
     end
