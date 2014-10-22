@@ -28,16 +28,8 @@ class PaysController < ApplicationController
   def destroy
     @pay=Pay.find(params[:id])
     @pay.destroy
-    redirect_to pays_path
+    redirect_to pays_path( :page => params[:page] )
   end
-
-   
-
-
-
-
-
-
 
   private
 
