@@ -1,5 +1,7 @@
 class PaysController < ApplicationController
 
+  before_action :authenticate
+
   def index
     @pays = Pay.order("id DESC").page(params[:page]).per(5)
   end
@@ -34,6 +36,14 @@ class PaysController < ApplicationController
     @pay.destroy
 
     redirect_to pays_path( :page => params[:page] )
+  end
+
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+    username == "dachin" && password == "123456789"
+    end
   end
 
   private
